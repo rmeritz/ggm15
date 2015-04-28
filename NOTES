@@ -1,0 +1,49 @@
+References:
+https://developer.mozilla.org/en-US/docs/Introduction_to_SSL
+
+TLS RFC: http://tools.ietf.org/html/rfc5246
+
+https://en.wikipedia.org/wiki/Transport_Layer_Security
+
+https://www.eff.org/https-everywhere
+
+https://en.wikipedia.org/wiki/Heartbleed
+
+
+SSL/TLS for Security Novices:
+
+1. Where I have I seen it before?
+
+- Picture of lock in a search tool bar
+- In the news: Heartbleed, etc...
+
+1. Why should I care what TSL is?
+
+????
+
+1. What does it do?
+
+- The SSL protocol runs above TCP/IP and below higher-level protocols such as HTTP or IMAP.
+- What is a protocol?
+
+-  SSL server authentication allows a user to confirm a server's identity. Via a
+   certificate authority (CA) listed in the client's list of trusted CAs.
+-
+
+1. How does it work?
+
+- Client / Server Diagram?
+- Step walk through?
+
+1. Problems with it?
+
+- CA Authority
+-
+
+1. Who is working on it?
+
+1. Tools I can use to improve my own security?
+
+1. Erl-TLS?
+
+1. Thanks
