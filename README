@@ -1,0 +1,3 @@
+remote add mike git@sharedcore.org:ggm15.git
+
+push mike gh-pages:master
