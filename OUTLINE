@@ -7,13 +7,13 @@
 - What I can do.
 
 3) What is it?
+https://oneofakind.solutions/wp-content/uploads/SSL-1.jpg
 - Web is insecure by default
   (orginally for universities)
 - TLS + HTTP = HTTPS
 - Not just the web
   ( electronic mail, Internet faxing, instant messaging, and voice-over-IP )
 - Cryptographic Protocol
-
   (an abstract or concrete protocol that performs a security-related function
   and applies cryptographic methods, often as sequences of cryptographic
   primitives.)
@@ -24,11 +24,13 @@
   third parties)
 
 4) How did it come to be?
+http://www.technifree.com/modules/wfdownloads/images/screenshots/netscape_logo1174n.jpg
 - Orginally Netscape
 - Gone through many versions
 - Changed name do to Microsoft
 
 5) Cryptography
+http://www.cse.iitd.ac.in/~shweta/img/lock.gif
 - keeping secrets (conidentiality)
 - verifying identities (authenticity)
 - ensuring safe transport (integrity)
@@ -37,6 +39,7 @@
 (Exchanged an atritrary number of messages)
 
 7) Attack 1: Eavsdropping
+http://citizenmag.com/wp-content/uploads/2014/08/Eavesdropping.jpg
 - I can just read the message you pass back and forth...
 (Conidentiality)
 
@@ -86,20 +89,8 @@ the fingerprint (hash)
 - Keyed-hash
 - Authenticity
 
-18) Attack 3: More tampering
--  I can drop or replay arbitary messages...
-
-19) Preventing Attack 3
-- Make a sequeue code part of the Message Authention Code
-- Including a special marker for the last messages to avoid truncation
-
-20) Attack 4:
-* I can stop you from recieving messages altogther
-
-21) Preventing Attack 4
-- TLS doesn't fix this
-
 22) But what about the keys?
+http://www.santarosa.edu/about_srjc/facilities-operations/images/key.jpg
 -  Both Symetirc Encryption and Message Authention Code rely on both parties
 having secure keys.
 - One key for authenicathion.
@@ -107,16 +98,38 @@ having secure keys.
 - Authenication key is negiated first so you can sure who you say you are when
   you agree on the encyrption key
 
+23) Handshake...
+https://rhsecurity.files.wordpress.com/2013/07/tls-handshake.png
+- Uses assymetric cryptography to setup a symmetric session
+- assymetric is slow
+
+24) PKI
+Public Key Infrastructure
+https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Public-Key-Infrastructure.svg/1280px-Public-Key-Infrastructure.svg.png
+- digital certificates which map public keys to entities
+- The authentication part of the handshake
+
+18) Attack 3: More tampering
+-  I can drop or replay arbitary messages...
+
+19) Preventing Attack 3
+- Make a sequeue code part of the Message Authention Code
+- Including a special marker for the last messages to avoid truncation
+
+
 23) Puting it all togther:
 
-  1) Handshake (Agree on authentication and encyprion keys)
+  1) Handshake (Agree on authentication and encyprion keys, uses PKI and
+  assymetirc encryption)
   2) Date Exchange (Use Symetric Encryption and MAC)
   3) Shutdown
 
-23) Handshake...
-PKA / CAs
+20) Attack 4:
+* I can stop you from recieving messages altogther
 
-24) Shutdown?
+21) Preventing Attack 4
+- TLS doesn't fix this
+(or everything in general)
 
 25) Attacks on TSL
 - Passive Attacks
@@ -129,9 +142,11 @@ PKA / CAs
 
 27 ) As an internet user?
 - HTTPs Everywhere
+https://www.eff.org/https-everywhere
 - Don't click through when certificates are invalid
 - Look for the lock in your browser
 - https://www.ssllabs.com/ssltest/viewMyClient.html
+(add screenshot)
 - Upgrade your browser
 
 28) As a developer or sysadmin:
