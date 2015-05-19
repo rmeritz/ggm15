@@ -1,0 +1,143 @@
+1) "TLS/SSL: Preventing eavesdropping and tampering on the web"
+
+2) Overview
+- What is it?
+- How does it work?
+- How has it not worked?
+- What I can do.
+
+3) What is it?
+- Web is insecure by default
+  (orginally for universities)
+- TLS + HTTP = HTTPS
+- Not just the web
+  ( electronic mail, Internet faxing, instant messaging, and voice-over-IP )
+- Cryptographic Protocol
+
+  (an abstract or concrete protocol that performs a security-related function
+  and applies cryptographic methods, often as sequences of cryptographic
+  primitives.)
+  (a system of rules that allow two or more entities of a communication system
+  to communicate between them to transmit information via any kind of variation
+  of a physical quantity.)
+  (practice and study of techniques for secure communication in the presence of
+  third parties)
+
+4) How did it come to be?
+- Orginally Netscape
+- Gone through many versions
+- Changed name do to Microsoft
+
+5) Cryptography
+- keeping secrets (conidentiality)
+- verifying identities (authenticity)
+- ensuring safe transport (integrity)
+
+6) How does SSL provide these protections?
+(Exchanged an atritrary number of messages)
+
+7) Attack 1: Eavsdropping
+- I can just read the message you pass back and forth...
+(Conidentiality)
+
+8) Tool 1:
+- Symeteric Encryption
+- Conidentiality
+
+9) Symmetic Encyrption PNG
+(Plaintext -> Cipher -> CipherText -> Cipher -> Plaintext)
+
+10) Subsitution Cipher
+https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ROT13.png/300px-ROT13.png
+
+11) What makes a good cipher?
+- Seemingly Random (Subisition can be broken with frequency anaylsis)
+- Only broken via Exhastive Key Search
+(A good cipher can only be broken by trying all keys)
+- Computationally Secure
+(If its a prohibitavitly large number of keys)
+
+12) Block Ciphers
+- 128-bit key
+- 340 billion billion billlion billion possible combinations.
+- Determenistic
+- For a set length of data
+
+13) Block Cipher Modes
+- Repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block
+- Used by SSL
+- ECB, CBC, CFB, OFB, CTR, GCM
+
+14) Attack 2: Tampering
+* I can try and pretend to send a message as you...
+
+15) Hashing Function (Hash)
+http://blog.varonis.com/wp-content/uploads/2012/08/eagle.jpg
+- Converts input into a fixed length
+(Below just for cryptographic hashing):
+- Another message doesn't have the same hash
+- Fingerprint
+- Unfeasable to find orginal message
+
+16) Haven't solved the tampering problem yet because I could still tamper with
+the fingerprint (hash)
+
+17) Message Authentication Code (MAC)
+- Keyed-hash
+- Authenticity
+
+18) Attack 3: More tampering
+-  I can drop or replay arbitary messages...
+
+19) Preventing Attack 3
+- Make a sequeue code part of the Message Authention Code
+- Including a special marker for the last messages to avoid truncation
+
+20) Attack 4:
+* I can stop you from recieving messages altogther
+
+21) Preventing Attack 4
+- TLS doesn't fix this
+
+22) But what about the keys?
+-  Both Symetirc Encryption and Message Authention Code rely on both parties
+having secure keys.
+- One key for authenicathion.
+- One key for encyrption.
+- Authenication key is negiated first so you can sure who you say you are when
+  you agree on the encyrption key
+
+23) Puting it all togther:
+
+  1) Handshake (Agree on authentication and encyprion keys)
+  2) Date Exchange (Use Symetric Encryption and MAC)
+  3) Shutdown
+
+23) Handshake...
+PKA / CAs
+
+24) Shutdown?
+
+25) Attacks on TSL
+- Passive Attacks
+- Active Attacks
+  - Man in the Middle Attacks (on the authentication process)
+  - Attacks on the Public Key Infastructure
+  - Implementation Issues
+
+26) What should I do?
+
+27 ) As an internet user?
+- HTTPs Everywhere
+- Don't click through when certificates are invalid
+- Look for the lock in your browser
+- https://www.ssllabs.com/ssltest/viewMyClient.html
+- Upgrade your browser
+
+28) As a developer or sysadmin:
+- enable TSL
+- it only works if its configured properly
+- Deployment Best Practices
+- https://www.ssllabs.com/projects/best-practices/index.html
+- Server Test
+- https://www.ssllabs.com/ssltest/analyze.html?d=meritz.rocks
