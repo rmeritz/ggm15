@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>SSL/TLS GGM15</title>
+		<title>SSL/TLS</title>
 
 		<meta name="description" content="An Intro to SSL">
 		<meta name="author" content="Rebecca Meritz">
@@ -60,14 +60,233 @@
                             <ul>
                               <li>What is it?</li>
                               <li>How does it work?</li>
-                              <li>How hasn't worked?</li>
                               <li>What I can do?</li>
                             </ul>
                           </section>
 
                           <section>
+                            <h2>What is SSL/TLS?</h2>
+                            <ul>
+                              <li>Web is insecure by default</li>
+                              <li>TLS + HTTP = HTTPS</li>
+                              <li>Not just the web</li>
+                              <li>Cryptographic Protocol</li>
+                            </ul>
+                            <img
+                            src="https://oneofakind.solutions/wp-content/uploads/SSL-1.jpg">
+                          </section>
+
+                          <section>
+                            <h2>How did it come to be?</h2>
+                            <ul>
+                              <li>Orginally Netscape</li>
+                              <li>Gone through many versions</li>
+                              <li>Changed name do to Microsoft</li>
+                            </ul>
+                            <img
+                            src="http://www.technifree.com/modules/wfdownloads/images/screenshots/netscape_logo1174n.jpg">
+                          </section>
+
+                          <section>
+                            <h2>Cryptography</h2>
+                            <ul>
+                              <li>Keeping secrets (conidentiality)</li>
+                              <li>Verifying identities (authenticity)</li>
+                              <li>Ensuring safe transport (integrity)</li>
+                            </ul>
+                            <img src="http://www.cse.iitd.ac.in/~shweta/img/lock.gif" >
+                          </section>
+
+                          <section>
+                            <h2>How does TLS provide these protections?</h2>
+                          </section>
+
+                          <section>
+                            <h2>Attack 1: Eavsdropping</h2>
+                            <img src="http://citizenmag.com/wp-content/uploads/2014/08/Eavesdropping.jpg" >
+                          </section>
+
+                          <section>
+                            <h2>Tool 1:</h2>
+                            <h3>Symeteric Encryption</h3>
+                            <img src="symmetric_encryption.png">
+                          </section>
+
+                          <section>
+                            <h2>Subsitution Cipher</h2>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ROT13.png/300px-ROT13.png" >
+                          </section>
+
+                          <section>
+                            <h2>What makes a good cipher?</h2>
+                            <ul>
+                              <li>Seemingly Random</li>
+                              <li>Only broken via an Exhastive Key Search</li>
+                              <li>Computationally Secure</li>
+                            </ul>
+                          </section>
+
+                          <section>
+                            <h2>Block Ciphers</h2>
+                            <ul>
+                              <li>128-bit key</li>
+                              <li>340 billion billion billlion billion possible combinations</li>
+                              <li>Determenistic</li>
+                              <li>For a set length of data</li>
+                            </ul>
+                          </section>
+
+                          <section>
+                            <h2>Block Cipher Modes</h2>
+                            <ul>
+                              <li>Repeated block operations</li>
+                              <li>Securely transform amounts of data larger than a block</li>
+                              <li>ECB, CBC, CFB, OFB, CTR, GCM</li>
+                              <li>Used by TLS</li>
+                            </ul>
+                          </section>
+
+                          <section>
+                            <h2>Electronic Cookbook Mode (ECB)</h2>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Ecb_encryption.png" >
+                          </section>
+
+                          <section>
+                            <h2>Cipher Feedback Mode (CFB)</h2>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Cfb_decryption.png" >
+                          </section>
+
+                          <section>
+                            <h2>Attack 1: Eavsdropping</h2>
+                            <h3>Symeteric Encryption</h3>
+                            <img src="symmetric_encryption.png">
+                          </section>
+
+                          <section>
+                            <h2>Attack 2: Tampering</h2>
+                            <img src="http://www.labelswest.com/images/products/security_and_tamper_evident_labels.jpg">
+                          </section>
+
+                          <section>
+                            <h2>Hashing Function (Hash)</h2>
+                            <ul>
+                              <li>Converts input into a fixed length</li>
+                              <li>Another message doesn't have the same hash</li>
+                              <li>Fingerprint</li>
+                              <li>Unfeasable to find orginal message</li>
+                            </ul>
+                            <img src="http://blog.varonis.com/wp-content/uploads/2012/08/eagle.jpg" >
+                          </section>
+
+                          <section>
+                            <h2>Message Authentication Code (MAC)</h2>
+                            <ul>
+                              <li>Prevents tamping with the fingerprint</li>
+                              <li>Keyed-hash</li>
+                            </ul>
+                          </section>
+
+                          <section>
+                            <h2>Attack 3: More tampering</h2>
+                            <p>I can drop or replay arbitary messages.</p>
+                          </section>
+
+                          <section>
+                            <h2>Preventing Attack 3</h2>
+                            <ul>
+                              <li>Make a sequeue code part of the Message Authention Code</li>
+                              <li>Including a special marker for the last messages
+                                 to avoid truncation</li>
+                            </ul>
+                          </section>
+
+                          <section>
+                            <img src="block.png">
+                          </section>
+
+                          <section>
+                            <h2>But what about the keys?</h2>
+                            <ul>
+                              <li>One key for authenicathion.</li>
+                              <li>One key for encyrption.</li>
+                            </ul>
+                            <img src="http://www.santarosa.edu/about_srjc/facilities-operations/images/key.jpg" >
+                          </section>
+
+                          <section>
+                            <h2>Handshake</h2>
+                            <img src="https://rhsecurity.files.wordpress.com/2013/07/tls-handshake.png" >
+                          </section>
+
+                          <section>
+                            <h2>Public Key Infrastructure (PKI)</h2>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Public-Key-Infrastructure.svg/1280px-Public-Key-Infrastructure.svg.png" >
+                          </section>
+
+                          <section>
+                            <h2>Is it really secure?</h2>
+                          </section>
+
+                          <section>
+                            <h2>Attack 4:</h2>
+                            <p>I can stop you from recieving messages altogther.</p>
+                          </section>
+
+                          <section>
+                            <h2>Vulnerabilities of TSL</h2>
+                            <ul>
+                              <li>Passive Attacks</li>
+                              <li>Active Attacks</li>
+                                <ul>
+                                  <li>Man in the Middle Attacks (on the authentication process)</li>
+                                  <li>Attacks on the Public Key Infastructure</li>
+                                  <li>Implementation Issues</li>
+                                </ul>
+                            </ul>
+                          </section>
+
+                          <section>
+                            <h2>What can I do?</h2>
+                          </section>
+
+                          <section>
+                            <h2>For internet users</h2>
+                            <ul>
+                              <li>Look for the lock in your browser</li>
+                              <li>Don't click through when certificates are invalid</li>
+                              <li><a href="https://www.eff.org/https-everywhere">HTTPs Everywhere</a></li>
+                            </ul>
+                            <img src="http://screenshots.en.sftcdn.net/en/scrn/98000/98341/https-everywhere-9.png" >
+                          </section>
+
+                          <section>
+                            <h2>SSL Client Test</h2>
+                            <a href="https://www.ssllabs.com/ssltest/viewMyClient.html">
+                                <img src="client_test.png" >
+                            </a>
+                          </section>
+
+                          <section>
+                            <h2>For developers or sysadmins</h2>
+                            <ul>
+                              <li>Enable TSL</li>
+                              <li>Configure it correctly</li>
+                              <li><a href="https://www.ssllabs.com/projects/best-practices/index.html">Deployment Best Practices</a></li>
+                            </ul>
+                          </section>
+
+                          <section>
+                            <h2>SSL Server Test</h2>
+                            <a href="https://www.ssllabs.com/ssltest/analyze.html?d=meritz.rocks">
+                                <img src="server_test.png" >
+                            </a>
+                          </section>
+
+                          <section>
                             <h2>@rmeritz</h2>
-                            <img src="hemnet.png" >
+                            <h3><a href="http://rebecca.meritz.com/ggm15">http://rebecca.meritz.com/ggm15</a></h3>
+                            <h3><a href="https://meritz.rocks">https://meritz.rocks</a></h3>
+                            <a href="hemnet.se"><img src="hemnet.png" ></a>
                           </section>
 			</div>
 
