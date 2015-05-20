@@ -94,12 +94,12 @@
                           </section>
 
                           <section>
-                            <h2>Outline of the TLS Protocol</h2>
-                            <ul>
-                              <li>Step 1: Handshake</li>
-                              <li>Step 2: Data Exchange</li>
-                              <li>Step 3: Shutdown</li>
-                            </ul>
+                            <h2>TLS Protocol</h2>
+                            <ol>
+                              <li>Handshake</li>
+                              <li>Data Exchange</li>
+                              <li>Shutdown</li>
+                            </ol>
                           </section>
 
                           <section>
@@ -108,12 +108,12 @@
                           </section>
 
                           <section>
-                            <h2>Outline of the TLS Protocol</h2>
-                            <ul>
-                              <li>Step 1: Handshake</li>
-                              <li><strong>Step 2: Data Exchange</strong></li>
-                              <li>Step 3: Shutdown</li>
-                            </ul>
+                            <h2>TLS Protocol</h2>
+                            <ol>
+                              <li>Handshake</li>
+                              <li><strong>Data Exchange</strong></li>
+                              <li>Shutdown</li>
+                            </ol>
                           </section>
 
                           <section>
@@ -194,11 +194,11 @@
 
                           <section>
                             <h2>Solution 4: Handshake</h2>
-                            <ul>
-                              <li><strong>Step 1: Handshake</strong></li>
-                              <li>Step 2: Data Exchange</li>
-                              <li>Step 3: Shutdown</li>
-                            </ul>
+                            <ol>
+                              <li><strong>Handshake</strong></li>
+                              <li>Data Exchange</li>
+                              <li>Shutdown</li>
+                            </ol>
                           </section>
 
                           <section>
@@ -240,20 +240,31 @@
 
                           <section>
                             <h2>Solution 7: Shutdown</h2>
-                            <ul>
-                              <li>Step 1: Handshake</li>
-                              <li>Step 2: Data Exchange</li>
-                              <li><strong>Step 3: Shutdown</strong></li>
-                            </ul>
+                            <ol>
+                              <li>Handshake</li>
+                              <li>Data Exchange</li>
+                              <li><strong>Shutdown</strong></li>
+                            </ol>
                           </section>
 
                           <section>
                             <h2>TLS Protcol</h2>
-                            <ul>
-                              <li>Step 1: Handshake: Assymmetric Encryption and Public Key Infrastructure</li>
-                              <li>Step 2: Data Exchange: Symeteric Encryption and Hashing and Sequence codes</li>
-                              <li>Step 3: Shutdown</li>
-                            </ul>
+                            <ol>
+                            <li><strong>Handshake:</strong>
+                              <ul>
+                                <li>Assymmetric Encryption (Conidentiality) </li>
+                                <li>Public Key Infrastructure (Conidentiality / Authentication) </li>
+                              </ul>
+                            </li>
+                            <li><strong>Data Exchange:</strong>
+                              <ul>
+                                <li>Symmetric Encryption (Conidentiality) </li>
+                                <li>Hashing (Integrity) </li>
+                                <li>Sequence codes (Integrity)</li>
+                              </ul>
+                            </li>
+                            <li><strong>Shutdown</strong> (Integrity)</li>
+                            </ol>
                           </section>
 
                           <section>
@@ -265,16 +276,17 @@
                             <ul>
                               <li>Look for the lock in your browser</li>
                               <li>Don't click through when certificates are invalid</li>
-                              <li><a href="https://www.eff.org/https-everywhere">HTTPs Everywhere</a></li>
+                              <li><a
+                              href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a></li>
                             </ul>
                             <img src="http://screenshots.en.sftcdn.net/en/scrn/98000/98341/https-everywhere-9.png" >
                           </section>
 
                           <section>
-                            <h2>SSL Client Test</h2>
                             <a href="https://www.ssllabs.com/ssltest/viewMyClient.html">
-                                <img src="client_test.png" >
+                            <h2>SSL Client Test</h2>
                             </a>
+                            <img src="client_test.png" >
                           </section>
 
                           <section>
@@ -287,10 +299,10 @@
                           </section>
 
                           <section>
-                            <h2>SSL Server Test</h2>
                             <a href="https://www.ssllabs.com/ssltest/analyze.html?d=meritz.rocks">
-                                <img src="server_test.png" >
+                            <h2>SSL Server Test</h2>
                             </a>
+                                <img src="server_test.png" >
                           </section>
 
                           <section>
