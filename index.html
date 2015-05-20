@@ -6,7 +6,7 @@
 
 		<title>SSL/TLS</title>
 
-		<meta name="description" content="SSL/TSL">
+		<meta name="description" content="SSL/TLS">
 		<meta name="author" content="Rebecca Meritz">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,10 +55,9 @@
                           </section>
 
                           <section>
-                            <h2>What is SSL/TSL?</h2>
+                            <h2>What is SSL/TLS?</h2>
                             <ul>
                               <li>Tool for making the web more secure</li>
-                              <li>Termninolgy</li>
                               <li>Web is insecure by default</li>
                               <li>TLS + HTTP = HTTPS</li>
                               <li>Not just the web</li>
@@ -78,7 +77,7 @@
                           <section>
                             <h2>What is secure communication?</h2>
                             <ul>
-                              <li>Keeping secrets (Conidentiality)</li>
+                              <li>Keeping secrets (Confidentiality)</li>
                               <li>Verifying identities (Authenticity)</li>
                               <li>Ensuring safe transport (Integrity)</li>
                             </ul>
@@ -104,7 +103,7 @@
 
                           <section>
                             <h2>How does the TLS protocol provide cryptographic security?</h2>
-                            <p>Conidentiality, Authenticity, and Integrity</p>
+                            <p>Confidentiality, Authenticity, and Integrity</p>
                           </section>
 
                           <section>
@@ -117,7 +116,7 @@
                           </section>
 
                           <section>
-                            <h2>Problem 1: Conidentiality</h2>
+                            <h2>Problem 1: Confidentiality</h2>
                             <img src="http://citizenmag.com/wp-content/uploads/2014/08/Eavesdropping.jpg" >
                           </section>
 
@@ -127,12 +126,12 @@
                             <img src="symmetric_encryption.png">
                           </section>
 
-                          <!--
                           <section>
                             <h2>Subsitution Cipher</h2>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ROT13.png/300px-ROT13.png" >
                           </section>
 
+                          <!--
                           <section>
                             <h2>What makes a good cipher?</h2>
                             <ul>
@@ -166,20 +165,20 @@
                             --!>
 
                           <section>
-                            <h2>Problem 2: Conidentiality</h2>
-                            <h3>How to Bob and Alice get the same keys?</h3>
+                            <h2>Problem 2: Confidentiality</h2>
+                            <h3>How do the client and the server get the same keys?</h3>
                           </section>
 
                           <section>
-                            <h2>Solution 2: Assymmetric Encryption</h2>
+                            <h2>Solution 2: Asymmetric Encryption</h2>
                             <h3>Public Key Cryptography</h3>
                             <img src="asymmetric_encryption.png">
                           </section>
 
                           <section>
-                            <h2>Problem 3: Conidentiality / Authenticity</h2>
+                            <h2>Problem 3: Confidentiality / Authenticity</h2>
                             <h3>Where are the public keys?</h3>
-                            <h3>How do I know I have the correct private key?</h3>
+                            <h3>How do I know I have the correct public key?</h3>
                           </section>
 
                           <section>
@@ -189,7 +188,7 @@
 
                           <section>
                             <h2>Problem 4: Confidenality</h2>
-                            <h3>But assymetiric encryption is slow and expensive.</h3>
+                            <h3>But asymmetric encryption is slow and expensive.</h3>
                           </section>
 
                           <section>
@@ -217,7 +216,7 @@
                               <li>Converts input into a fixed length</li>
                               <li>Another message doesn't have the same hash</li>
                               <li>Fingerprint</li>
-                              <li>Unfeasable to find orginal message</li>
+                              <li>Infeasible to find orginal message</li>
                               <li>Message Authentication Code (MAC) - Keyed hash</li>
                             </ul>
                             <img src="http://blog.varonis.com/wp-content/uploads/2012/08/eagle.jpg" >
@@ -225,7 +224,7 @@
 
                           <section>
                             <h2>Problem 6: Integrity</h2>
-                            <h3>Droping or Replay</h3>
+                            <h3>Dropping or Replay</h3>
                           </section>
 
                           <section>
@@ -235,7 +234,7 @@
 
                           <section>
                             <h2>Problem 7: Integrity</h2>
-                            <h3>Trucation (dropping the last message)</h3>
+                            <h3>Truncation (dropping the last message)</h3>
                           </section>
 
                           <section>
@@ -252,13 +251,13 @@
                             <ol>
                             <li><strong>Handshake:</strong>
                               <ul>
-                                <li>Assymmetric Encryption (Conidentiality) </li>
-                                <li>Public Key Infrastructure (Conidentiality / Authentication) </li>
+                                <li>Asymmetric Encryption (Confidentiality) </li>
+                                <li>Public Key Infrastructure (Confidentiality / Authentication) </li>
                               </ul>
                             </li>
                             <li><strong>Data Exchange:</strong>
                               <ul>
-                                <li>Symmetric Encryption (Conidentiality) </li>
+                                <li>Symmetric Encryption (Confidentiality) </li>
                                 <li>Hashing (Integrity) </li>
                                 <li>Sequence codes (Integrity)</li>
                               </ul>
@@ -292,7 +291,7 @@
                           <section>
                             <h2>For developers or sysadmins</h2>
                             <ul>
-                              <li>Enable TSL</li>
+                              <li>Enable TLS</li>
                               <li>Configure it correctly</li>
                               <li><a href="https://www.ssllabs.com/projects/best-practices/index.html">Deployment Best Practices</a></li>
                             </ul>
