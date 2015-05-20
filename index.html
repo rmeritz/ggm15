@@ -6,7 +6,7 @@
 
 		<title>SSL/TLS</title>
 
-		<meta name="description" content="An Intro to SSL">
+		<meta name="description" content="SSL/TSL">
 		<meta name="author" content="Rebecca Meritz">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -42,8 +42,7 @@
 			<div class="slides">
                           <section>
 
-        <h1>TLS/SSL</h1>
-        <h3>Preventing Eavesdropping and Tampering on the Web</h3>
+                          <h1>SSL/TLS</h1>
                             <p>
                               <small>
                                 <a href="http://rebecca.meritz.com">Rebecca Meritz</a>
@@ -56,17 +55,10 @@
                           </section>
 
                           <section>
-                            <h2>Overview</h2>
+                            <h2>What is SSL/TSL?</h2>
                             <ul>
-                              <li>What is it?</li>
-                              <li>How does it work?</li>
-                              <li>What I can do?</li>
-                            </ul>
-                          </section>
-
-                          <section>
-                            <h2>What is SSL/TLS?</h2>
-                            <ul>
+                              <li>Tool for making the web more secure</li>
+                              <li>Termninolgy</li>
                               <li>Web is insecure by default</li>
                               <li>TLS + HTTP = HTTPS</li>
                               <li>Not just the web</li>
@@ -77,41 +69,65 @@
                           </section>
 
                           <section>
-                            <h2>How did it come to be?</h2>
-                            <ul>
-                              <li>Orginally Netscape</li>
-                              <li>Gone through many versions</li>
-                              <li>Changed name do to Microsoft</li>
-                            </ul>
-                            <img
-                            src="http://www.technifree.com/modules/wfdownloads/images/screenshots/netscape_logo1174n.jpg">
-                          </section>
-
-                          <section>
                             <h2>Cryptography</h2>
-                            <ul>
-                              <li>Keeping secrets (conidentiality)</li>
-                              <li>Verifying identities (authenticity)</li>
-                              <li>Ensuring safe transport (integrity)</li>
-                            </ul>
+                            <p> Practice and study of techniques for <strong>secure
+                              communication</strong> in the presence of third parties.</p>
                             <img src="http://www.cse.iitd.ac.in/~shweta/img/lock.gif" >
                           </section>
 
                           <section>
-                            <h2>How does TLS provide these protections?</h2>
+                            <h2>What is secure communication?</h2>
+                            <ul>
+                              <li>Keeping secrets (Conidentiality)</li>
+                              <li>Verifying identities (Authenticity)</li>
+                              <li>Ensuring safe transport (Integrity)</li>
+                            </ul>
                           </section>
 
                           <section>
-                            <h2>Attack 1: Eavsdropping</h2>
+                            <h2>Protocol</h2>
+                            <p>
+                              A system of rules that explain the correct conduct
+                              and <strong>procedures</strong> to be followed in a situation.
+                            </p>
+                            <img src="http://www.simcoemuskokahealth.org/Libraries/DRAW_InfectiousDisease/Handwashing.sflb.ashx">
+                          </section>
+
+                          <section>
+                            <h2>Outline of the TLS Protocol</h2>
+                            <ul>
+                              <li>Step 1: Handshake</li>
+                              <li>Step 2: Data Exchange</li>
+                              <li>Step 3: Shutdown</li>
+                            </ul>
+                          </section>
+
+                          <section>
+                            <h2>How does the TLS protocol provide cryptographic security?</h2>
+                            <p>Conidentiality, Authenticity, and Integrity</p>
+                          </section>
+
+                          <section>
+                            <h2>Outline of the TLS Protocol</h2>
+                            <ul>
+                              <li>Step 1: Handshake</li>
+                              <li><strong>Step 2: Data Exchange</strong></li>
+                              <li>Step 3: Shutdown</li>
+                            </ul>
+                          </section>
+
+                          <section>
+                            <h2>Problem 1: Conidentiality</h2>
                             <img src="http://citizenmag.com/wp-content/uploads/2014/08/Eavesdropping.jpg" >
                           </section>
 
                           <section>
-                            <h2>Tool 1:</h2>
-                            <h3>Symeteric Encryption</h3>
+                            <h2>Solution 1: Symeteric Encryption</h2>
+                            <h3>Private Key Cryptography</h3>
                             <img src="symmetric_encryption.png">
                           </section>
 
+                          <!--
                           <section>
                             <h2>Subsitution Cipher</h2>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ROT13.png/300px-ROT13.png" >
@@ -129,7 +145,7 @@
                           <section>
                             <h2>Block Ciphers</h2>
                             <ul>
-                              <li>128-bit key</li>
+                              <li>128-bit random key</li>
                               <li>340 billion billion billlion billion possible combinations</li>
                               <li>Determenistic</li>
                               <li>For a set length of data</li>
@@ -143,105 +159,100 @@
                               <li>Securely transform amounts of data larger than a block</li>
                               <li>ECB, CBC, CFB, OFB, CTR, GCM</li>
                               <li>Used by TLS</li>
+                              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Ecb_encryption.png" >
+                            </ul>
+                          </section>
+
+                            --!>
+
+                          <section>
+                            <h2>Problem 2: Conidentiality</h2>
+                            <h3>How to Bob and Alice get the same keys?</h3>
+                          </section>
+
+                          <section>
+                            <h2>Solution 2: Assymmetric Encryption</h2>
+                            <h3>Public Key Cryptography</h3>
+                            <img src="asymmetric_encryption.png">
+                          </section>
+
+                          <section>
+                            <h2>Problem 3: Conidentiality / Authenticity</h2>
+                            <h3>Where are the public keys?</h3>
+                            <h3>How do I know I have the correct private key?</h3>
+                          </section>
+
+                          <section>
+                            <h2>Solution 3: Public Key Infrastructure (PKI)</h2>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Public-Key-Infrastructure.svg/1280px-Public-Key-Infrastructure.svg.png" >
+                          </section>
+
+                          <section>
+                            <h2>Problem 4: Confidenality</h2>
+                            <h3>But assymetiric encryption is slow and expensive.</h3>
+                          </section>
+
+                          <section>
+                            <h2>Solution 4: Handshake</h2>
+                            <ul>
+                              <li><strong>Step 1: Handshake</strong></li>
+                              <li>Step 2: Data Exchange</li>
+                              <li>Step 3: Shutdown</li>
                             </ul>
                           </section>
 
                           <section>
-                            <h2>Electronic Cookbook Mode (ECB)</h2>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Ecb_encryption.png" >
+                            <img src="https://rhsecurity.files.wordpress.com/2013/07/tls-handshake.png" >
                           </section>
 
                           <section>
-                            <h2>Cipher Feedback Mode (CFB)</h2>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Cfb_decryption.png" >
-                          </section>
-
-                          <section>
-                            <h2>Attack 1: Eavsdropping</h2>
-                            <h3>Symeteric Encryption</h3>
-                            <img src="symmetric_encryption.png">
-                          </section>
-
-                          <section>
-                            <h2>Attack 2: Tampering</h2>
+                            <h2>Problem 5: Integrity</h2>
+                            <h3>Tampering</h3>
                             <img src="http://www.labelswest.com/images/products/security_and_tamper_evident_labels.jpg">
                           </section>
 
                           <section>
-                            <h2>Hashing Function (Hash)</h2>
+                            <h2>Solution 5: Hashing Function (Hash)</h2>
                             <ul>
                               <li>Converts input into a fixed length</li>
                               <li>Another message doesn't have the same hash</li>
                               <li>Fingerprint</li>
                               <li>Unfeasable to find orginal message</li>
+                              <li>Message Authentication Code (MAC) - Keyed hash</li>
                             </ul>
                             <img src="http://blog.varonis.com/wp-content/uploads/2012/08/eagle.jpg" >
                           </section>
 
                           <section>
-                            <h2>Message Authentication Code (MAC)</h2>
-                            <ul>
-                              <li>Prevents tamping with the fingerprint</li>
-                              <li>Keyed-hash</li>
-                            </ul>
+                            <h2>Problem 6: Integrity</h2>
+                            <h3>Droping or Replay</h3>
                           </section>
 
                           <section>
-                            <h2>Attack 3: More tampering</h2>
-                            <p>I can drop or replay arbitary messages.</p>
-                          </section>
-
-                          <section>
-                            <h2>Preventing Attack 3</h2>
-                            <ul>
-                              <li>Make a sequeue code part of the Message Authention Code</li>
-                              <li>Including a special marker for the last messages
-                                 to avoid truncation</li>
-                            </ul>
-                          </section>
-
-                          <section>
+                            <h2>Solutions 6: Sequence Code</h2>
                             <img src="block.png">
                           </section>
 
                           <section>
-                            <h2>But what about the keys?</h2>
+                            <h2>Problem 7: Integrity</h2>
+                            <h3>Trucation (dropping the last message)</h3>
+                          </section>
+
+                          <section>
+                            <h2>Solution 7: Shutdown</h2>
                             <ul>
-                              <li>One key for authenicathion.</li>
-                              <li>One key for encyrption.</li>
+                              <li>Step 1: Handshake</li>
+                              <li>Step 2: Data Exchange</li>
+                              <li><strong>Step 3: Shutdown</strong></li>
                             </ul>
-                            <img src="http://www.santarosa.edu/about_srjc/facilities-operations/images/key.jpg" >
                           </section>
 
                           <section>
-                            <h2>Handshake</h2>
-                            <img src="https://rhsecurity.files.wordpress.com/2013/07/tls-handshake.png" >
-                          </section>
-
-                          <section>
-                            <h2>Public Key Infrastructure (PKI)</h2>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Public-Key-Infrastructure.svg/1280px-Public-Key-Infrastructure.svg.png" >
-                          </section>
-
-                          <section>
-                            <h2>Is it really secure?</h2>
-                          </section>
-
-                          <section>
-                            <h2>Attack 4:</h2>
-                            <p>I can stop you from recieving messages altogther.</p>
-                          </section>
-
-                          <section>
-                            <h2>Vulnerabilities of TSL</h2>
+                            <h2>TLS Protcol</h2>
                             <ul>
-                              <li>Passive Attacks</li>
-                              <li>Active Attacks</li>
-                                <ul>
-                                  <li>Man in the Middle Attacks (on the authentication process)</li>
-                                  <li>Attacks on the Public Key Infastructure</li>
-                                  <li>Implementation Issues</li>
-                                </ul>
+                              <li>Step 1: Handshake: Assymmetric Encryption and Public Key Infrastructure</li>
+                              <li>Step 2: Data Exchange: Symeteric Encryption and Hashing and Sequence codes</li>
+                              <li>Step 3: Shutdown</li>
                             </ul>
                           </section>
 
