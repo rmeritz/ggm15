@@ -38,6 +38,12 @@ body {
   background: #fff;
   background-color: #fff; }
 
+cite {
+  font-size: 21px;
+  white-space: nowrap;
+  color: grey;
+}
+
 .reveal {
   font-family: 'Open Sans', sans-serif;
   font-size: 36px;
